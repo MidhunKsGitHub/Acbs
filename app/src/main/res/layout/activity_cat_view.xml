@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".CatViewActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/acbs_blue"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="16sp"
+            android:layout_height="16sp"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/catname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="All"
+            android:textColor="@color/acbs_white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="18sp"
+            android:layout_height="18sp"
+            android:layout_marginRight="25dp"
+            shimmer:srcCompat="@drawable/search" />
+
+        <ImageView
+            android:id="@+id/img_sort"
+            android:layout_width="18sp"
+            android:layout_height="18sp"
+            android:layout_marginRight="25dp"
+            shimmer:srcCompat="@drawable/setup" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:orientation="vertical"
+            shimmer:duration="800">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/cat_view_shimmer" />
+
+                <include
+                    layout="@layout/cat_view_shimmer"
+                    android:visibility="visible" />
+                <include layout="@layout/cat_view_shimmer" />
+
+                <include
+                    layout="@layout/cat_view_shimmer"
+                    android:visibility="visible" />
+                <include layout="@layout/cat_view_shimmer" />
+                <include layout="@layout/cat_view_shimmer" />
+                <include layout="@layout/cat_view_shimmer" />
+                <include layout="@layout/cat_view_shimmer" />
+                <include layout="@layout/cat_view_shimmer" />
+                <include layout="@layout/cat_view_shimmer" />
+                <include layout="@layout/cat_view_shimmer" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView8"
+            android:background="@color/grey_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
